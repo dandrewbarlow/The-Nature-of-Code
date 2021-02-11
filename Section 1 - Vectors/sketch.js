@@ -1,7 +1,10 @@
 function setup() {
-  // put setup code here
+    createCanvas(500, 500);
+    mover = new Mover(width / 2, height / 2);
 }
 
 function draw() {
-  // put drawing code here
+    background(0);
+    mover.update();
+    mover.show();
 }
