@@ -18,14 +18,15 @@ function draw() {
         for (var y = 0; y < height; y++ ) {
             var index = (x + y * width) * 4;
             var r = noise(xoff, yoff, zoff) * 255;
-            if (r > 255 / 2) {
-                r = 255;
-            }
-            else {
-                r = 0;
-            }
-            pixels[index] = r >> 1;
-            pixels[index+1] = r / 4;
+
+            // if (r > 255 / 2) {
+            //     r = 255;
+            // }
+            // else {
+            //     r = 0;
+            // }
+            pixels[index] = r;// >> 1;
+            pixels[index+1] = r;// / 4;
             pixels[index+2] = r;
             pixels[index+3] = 255;
 

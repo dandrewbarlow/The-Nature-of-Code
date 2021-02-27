@@ -8,6 +8,10 @@ class Mover {
         this.acceleration.setMag(1);
         this.mass = m;
         this.radius = sqrt(this.mass) * 50;
+
+        this.angle = 0;
+        this.angleVel = 0;
+        this.angleAcc = 0;
     }
 
     // (-1/2) * rho * (v^2) * A * C_d * ^v 
@@ -77,6 +81,14 @@ class Mover {
 
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
+        
+        // this.angleA = this.acceleration.y / 50.0;
+
+        // this.angleVel += this.angleAcc;
+        // this.angle += this.angleVel;
+
+        this.angle = this.velocity.heading();
+
         this.acceleration.set(0,0);
     }
 
@@ -84,6 +96,10 @@ class Mover {
         stroke(255);
         strokeWeight(2);
         fill(255, 100);
-        ellipse(this.position.x, this.position.y, this.radius * 2);
+        push();
+        translate(this.position.x, this.position.y);
+        rotate(this.angle);
+        triangle(-this.radius, -this.radius / 2, -this.radius, this.radius / 2, this.radius, 0);
+        pop();
     }
 }
