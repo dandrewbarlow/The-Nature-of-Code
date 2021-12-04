@@ -1,7 +1,3 @@
-// This sketch focuses on gravitational attraction
-// sketch2 goes into implementing forces:
-// drag, gravity, collisions, friction
-
 let mover;
 let attractor;
 
